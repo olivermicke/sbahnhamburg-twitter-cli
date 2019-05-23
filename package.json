@@ -28,6 +28,7 @@
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {
+    "commander": "^2.20.0",
     "ink": "^2.2.0",
     "react": "^16.8.6"
   }

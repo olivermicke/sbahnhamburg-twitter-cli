@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { render, Color } from 'ink'
+import { render } from 'ink'
 
-const HelloWorld = () => <Color green>Hello world!</Color>
+import { StringifyParsedOptions } from './StringifyParsedOptions'
 
-render(<HelloWorld />)
+import { parseOptions } from './parse-options'
+
+render(<StringifyParsedOptions {...parseOptions()} />)
