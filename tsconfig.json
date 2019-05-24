@@ -4,9 +4,11 @@
     "sourceMap": false,
     "strict": true,
     "module": "commonjs",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "target": "es6",
     "jsx": "react"
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules"]
 }
