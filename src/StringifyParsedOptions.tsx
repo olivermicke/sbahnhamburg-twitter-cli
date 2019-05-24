@@ -3,8 +3,4 @@ import { Text } from 'ink'
 
 import { ParsedOptions } from './types'
 
-interface Props extends ParsedOptions {}
-
-export const StringifyParsedOptions = (props: Props) => (
-  <Text>{JSON.stringify(props)}</Text>
-)
+export const StringifyParsedOptions = (props: ParsedOptions): JSX.Element => <Text>{JSON.stringify(props)}</Text>
