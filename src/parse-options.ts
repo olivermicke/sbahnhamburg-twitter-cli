@@ -25,5 +25,5 @@ export const parseOptions = (): ParsedOptions => {
 
   if (!linesAreValid(lines)) throw 'Invalid S-Bahn line(s).'
 
-  return { allLines: commander.all || false, lines }
+  return { allStatuses: commander.all || false, lines }
 }
