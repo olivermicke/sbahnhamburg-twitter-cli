@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { render } from 'ink'
 
-import { StringifyParsedOptions } from './StringifyParsedOptions'
+import { View } from './components/View'
 
-import { parseOptions } from './parse-options'
+import { parseOptionsFromCLI } from './parse-options'
 
-render(<StringifyParsedOptions {...parseOptions()} />)
+render(<View {...parseOptionsFromCLI()} />)

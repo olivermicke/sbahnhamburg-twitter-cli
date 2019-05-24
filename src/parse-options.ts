@@ -1,29 +1,35 @@
 import * as commander from 'commander'
 
-import { Line, Lines, ParsedOptions } from './types'
+import { ERROR_MESSAGES } from './constants'
+import { ALL_LINES, stringToLine } from './helpers'
+import { defaultLines } from '../config.json'
 
-const DEFAULT_LINE: Line = 3
-const VALID_LINES: Lines = [1, 11, 2, 21, 3, 31]
+import { Line, Lines, OptionsFromCLI } from './types'
 
-const isValidLine = (line: Line): boolean => VALID_LINES.includes(line)
+const isValidLine = (line: Line): boolean => ALL_LINES.includes(line)
+
 const linesAreValid = (lines: Lines): boolean => lines.every(isValidLine)
-const strToLine = (line: string): Line => Number(line) as Line
 
-export const parseOptions = (): ParsedOptions => {
-  let lines: Lines = [DEFAULT_LINE]
+const defaultLinesIfValid = (): Lines => {
+  if (linesAreValid(defaultLines as Lines)) return defaultLines as Lines
+  else throw ERROR_MESSAGES.INVALID_DEFAULT_LINES
+}
+
+export const parseOptionsFromCLI = (): OptionsFromCLI => {
+  let lines: Lines = defaultLinesIfValid()
 
   commander
     .option('-a, --all', 'all S-Bahn lines')
-    .command('s <number> [otherLines...]')
+    .command('s <string> [otherLines...]')
     .action(
-      (lineString: string, otherLines: readonly string[]): void => {
-        lines = otherLines.map(strToLine).concat(strToLine(lineString))
+      (str: string, otherLines: string[]): void => {
+        lines = otherLines.concat(str).map(stringToLine)
       },
     )
 
   commander.parse(process.argv)
 
-  if (!linesAreValid(lines)) throw 'Invalid S-Bahn line(s).'
+  if (!linesAreValid(lines)) throw ERROR_MESSAGES.INVALID_LINE_ARGUMENTS
 
-  return { allStatuses: commander.all || false, lines }
+  return { allTweets: commander.all || false, lines }
 }

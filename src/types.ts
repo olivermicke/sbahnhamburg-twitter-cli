@@ -1,15 +1,15 @@
-export type Line = 1 | 11 | 2 | 21 | 3 | 31
+export type Line = 'S1' | 'S11' | 'S2' | 'S21' | 'S3' | 'S31'
 export type Lines = readonly Line[]
 
-export interface ParsedOptions {
-  allStatuses: boolean
+export interface OptionsFromCLI {
+  allTweets: boolean
   lines: Lines
 }
 
 // Full example response can be found here:
 // https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline.html
 /* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-explicit-any */
-export interface Status {
+export interface Tweet {
   created_at: string
   id: number
   id_str: string

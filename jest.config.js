@@ -1,6 +1,6 @@
 module.exports = {
   roots: ['<rootDir>/src'],
   transform: {
-    '^.+\\.tsx?$': 'babel-jest'
-  }
+    '^.+\\.tsx?$': 'babel-jest',
+  },
 }

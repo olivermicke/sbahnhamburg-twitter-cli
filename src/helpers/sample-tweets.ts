@@ -1,7 +1,7 @@
-import { Status } from '../../types'
+import { Tweet } from '../types'
 
 /* eslint-disable @typescript-eslint/camelcase */
-export const ALL_STATUSES: readonly Status[] = [
+export const ALL_TWEETS: readonly Tweet[] = [
   {
     created_at: 'Thu May 23 05:35:50 +0000 2019',
     id: 1131433536546906100,
@@ -150,7 +150,7 @@ export const ALL_STATUSES: readonly Status[] = [
   },
 ]
 
-export const S1_AND_S3_STATUSES: readonly Status[] = [
+export const S1_AND_S3_TWEETS: readonly Tweet[] = [
   {
     created_at: 'Thu May 23 05:35:50 +0000 2019',
     id: 1131433536546906100,
@@ -260,7 +260,42 @@ export const S1_AND_S3_STATUSES: readonly Status[] = [
   },
 ]
 
-export const S3_STATUSES: readonly Status[] = [
+export const S3_TWEET: Tweet = {
+  created_at: 'Thu May 23 05:35:50 +0000 2019',
+  id: 1131433536546906100,
+  id_str: '1131433536546906112',
+  text: 'Die Bahnübergangsstörung ist behoben. Der Regelbetrieb wird wieder aufgenommen. #S3 #hvv #sbahnhh',
+  truncated: false,
+  entities: {
+    hashtags: [
+      { text: 'S3', indices: [80, 83] },
+      { text: 'hvv', indices: [84, 88] },
+      { text: 'sbahnhh', indices: [89, 97] },
+    ],
+    symbols: [],
+    user_mentions: [],
+    urls: [],
+  },
+  source: '<a href="http://www.hacon.de/hafas/internet/fahrplan-cms-him" rel="nofollow">HAFAS Information Manager</a>',
+  in_reply_to_status_id: null,
+  in_reply_to_status_id_str: null,
+  in_reply_to_user_id: null,
+  in_reply_to_user_id_str: null,
+  in_reply_to_screen_name: null,
+  user: { id: 95618880, id_str: '95618880' },
+  geo: null,
+  coordinates: null,
+  place: null,
+  contributors: null,
+  is_quote_status: false,
+  retweet_count: 1,
+  favorite_count: 4,
+  favorited: false,
+  retweeted: false,
+  lang: 'de',
+}
+
+export const S3_TWEETS: readonly Tweet[] = [
   {
     created_at: 'Thu May 23 05:35:50 +0000 2019',
     id: 1131433536546906100,

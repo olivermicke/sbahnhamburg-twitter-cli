@@ -13,7 +13,7 @@
       "jsx": true
     }
   },
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": ["@typescript-eslint", "eslint-plugin-react-hooks", "react"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off"
   },
