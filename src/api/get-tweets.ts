@@ -2,7 +2,7 @@ import Twit from 'twit'
 
 import { T } from './twit-instance'
 
-import { includedIn, linesInTweet } from '../helpers'
+import { hoursBetween, includedIn, linesInTweet } from '../helpers'
 
 import { Lines, OptionsFromCLI, Tweet } from '../types'
 
@@ -25,9 +25,15 @@ export const fetchTweets = (count = DEFAULT_COUNT): Promise<readonly Tweet[]> =>
     (response: Twit.PromiseResponse) => response.data as readonly Tweet[],
   )
 
-export const filterTweetsByOptions = ({ allTweets, lines }: OptionsFromCLI) => (
-  tweets: readonly Tweet[],
-): readonly Tweet[] => (allTweets ? tweets : tweets.filter(includesLinesFromCLI(lines)))
+/* eslint-disable @typescript-eslint/camelcase */
+export const isRecent = ({ created_at }: Tweet) => hoursBetween(Date.now(), new Date(created_at).getTime()) < 48
+/* eslint-enable @typescript-eslint/camelcase */
+const filterRecent = (tweets: readonly Tweet[]) => tweets.filter(isRecent)
+
+export const filterByOptions = ({ allTweets, lines }: OptionsFromCLI) => (tweets: readonly Tweet[]): readonly Tweet[] =>
+  allTweets ? tweets : tweets.filter(includesLinesFromCLI(lines))
 
 export const getTweets = (optionsFromCLI: OptionsFromCLI): Promise<readonly Tweet[]> =>
-  fetchTweets().then(filterTweetsByOptions(optionsFromCLI))
+  fetchTweets()
+    .then(filterRecent)
+    .then(filterByOptions(optionsFromCLI))

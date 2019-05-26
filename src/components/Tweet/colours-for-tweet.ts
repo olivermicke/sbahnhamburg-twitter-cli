@@ -11,19 +11,23 @@ const S1_GREEN: RGB = [36, 167, 59]
 const S2_RED: RGB = [165, 19, 63]
 const S3_PURPLE: RGB = [81, 26, 126]
 
-// returns [bgRgb, rgb]
-export const coloursForTweet = (tweet: Tweet): [RGB, RGB] => {
+interface TweetColour {
+  bgRgb: RGB
+  rgb: RGB
+}
+
+export const coloursForTweet = (tweet: Tweet): TweetColour => {
   switch (linesInTweet(tweet)[0]) {
     case 'S1':
     case 'S11':
-      return [S1_GREEN, WHITE]
+      return { bgRgb: S1_GREEN, rgb: WHITE }
     case 'S2':
     case 'S21':
-      return [S2_RED, WHITE]
+      return { bgRgb: S2_RED, rgb: WHITE }
     case 'S3':
     case 'S31':
-      return [S3_PURPLE, WHITE]
+      return { bgRgb: S3_PURPLE, rgb: WHITE }
     default:
-      return [GREY, WHITE]
+      return { bgRgb: GREY, rgb: WHITE }
   }
 }

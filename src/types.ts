@@ -6,6 +6,8 @@ export interface OptionsFromCLI {
   lines: Lines
 }
 
+export type RecursivePartial<T> = { [P in keyof T]?: RecursivePartial<T[P]> }
+
 // Full example response can be found here:
 // https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline.html
 /* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-explicit-any */

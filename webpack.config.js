@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    filename: 'bundle.js',
+    filename: 'sbahnhamburg-twitter-cli.js',
     path: __dirname + '/dist',
   },
   target: 'node',

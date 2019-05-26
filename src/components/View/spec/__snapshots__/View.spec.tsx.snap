@@ -1,97 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`View renders correctly when tweets have been fetched 1`] = `
-<div
-  style={
-    Object {
-      "flexDirection": "column",
-      "flexGrow": 0,
-      "flexShrink": 1,
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "flexDirection": "row",
-        "flexGrow": 0,
-        "flexShrink": 1,
-      }
-    }
-  >
-    <span
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-      unstable__transformChildren={[Function]}
-    >
-      [07:35]
-    </span>
-    <span
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-      unstable__transformChildren={[Function]}
-    >
-       Die Bahnübergangsstörung ist behoben. Der Regelbetrieb wird wieder aufgenommen. #S3 #hvv #sbahnhh
-    </span>
-  </div>
-  <div
-    style={
-      Object {
-        "flexDirection": "row",
-        "flexGrow": 0,
-        "flexShrink": 1,
-      }
-    }
-  >
-    <span
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-      unstable__transformChildren={[Function]}
-    >
-      [19:09]
-    </span>
-    <span
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      }
-      unstable__transformChildren={[Function]}
-    >
-       #S1, #S3 wieder durch den Citytunnel. Polizeieinsatz beendet. #S1 #S3 #hvv #sbahnhh
-    </span>
-  </div>
-</div>
-`;
+exports[`View renders correctly when tweets are being fetched 1`] = `"[32m⠋[39m[39m [39m[39mLoading[39m"`
 
-exports[`View renders correctly when tweets have not been fetched yet 1`] = `
-<div
-  style={
-    Object {
-      "flexDirection": "column",
-      "flexGrow": 0,
-      "flexShrink": 1,
-    }
-  }
->
-  <span
-    style={
-      Object {
-        "flexDirection": "row",
-      }
-    }
-    unstable__transformChildren={[Function]}
-  >
-    Loading...
-  </span>
-</div>
-`;
+exports[`View renders correctly when tweets have been fetched 1`] = `
+"No tweets found today.
+
+[38;5;244m───────────────────[39m
+[38;5;244m Yesterday [39m
+[38;5;244m───────────────────[39m
+
+[38;5;231m[48;5;96m[07:35][49m[39m Die Bahnübergangsstörung ist behoben. Der Regelbetrieb wird wieder aufgenommen. #S3 #hvv #sbahnhh
+[38;5;231m[48;5;71m[19:09][49m[39m #S1, #S3 wieder durch den Citytunnel. Polizeieinsatz beendet. #S1 #S3 #hvv #sbahnhh"
+`
+
+exports[`View renders correctly when tweets have not been fetched yet 1`] = `"No recent tweets found."`

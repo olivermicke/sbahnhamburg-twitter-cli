@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tweet renders correctly 1`] = `"[38;5;231m[48;5;96m[07:35][49m[39m Die Bahnübergangsstörung ist behoben. Der Regelbetrieb wird wieder aufgenommen. #S3 #hvv #sbahnhh"`;

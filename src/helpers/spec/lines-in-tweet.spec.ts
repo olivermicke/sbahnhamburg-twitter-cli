@@ -1,8 +1,6 @@
 import { linesInTweet } from '../'
 
-import { Tweet } from '../../types'
-
-type RecursivePartial<T> = { [P in keyof T]?: RecursivePartial<T[P]> }
+import { RecursivePartial, Tweet } from '../../types'
 
 const createSampleTweet = (hashtagTexts: readonly string[]): RecursivePartial<Tweet> => ({
   entities: {

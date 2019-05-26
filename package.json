@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "dev": "webpack --mode development",
     "lint": "eslint --ext .ts --ext .tsx src",
-    "start": "node dist/bundle.js",
+    "start": "node dist/sbahnhamburg-twitter-cli.js",
     "test": "jest"
   },
   "author": "Oliver Micke",
@@ -19,9 +19,9 @@
     "@babel/preset-typescript": "^7.3.3",
     "@babel/runtime": "^7.4.5",
     "@types/ink": "^0.5.1",
+    "@types/ink-testing-library": "^1.0.0",
     "@types/jest": "^24.0.13",
     "@types/react": "^16.8.18",
-    "@types/react-test-renderer": "^16.8.1",
     "@types/twit": "^2.2.21",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
@@ -33,9 +33,9 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "ink-testing-library": "^1.0.1",
     "jest": "^24.8.0",
     "prettier": "^1.17.1",
-    "react-test-renderer": "^16.8.6",
     "typescript": "^3.4.5",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
@@ -43,6 +43,8 @@
   "dependencies": {
     "commander": "^2.20.0",
     "ink": "^2.2.0",
+    "ink-divider": "^2.0.0",
+    "ink-spinner": "^3.0.1",
     "react": "^16.8.6",
     "twit": "^2.2.11"
   }

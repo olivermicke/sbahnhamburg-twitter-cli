@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tweets render correctly grouped by date 1`] = `
+"
+[38;5;244m─────────────────────[39m
+[38;5;244m Today [39m
+[38;5;244m─────────────────────[39m
+
+[38;5;231m[48;5;96m[07:35][49m[39m Die Bahnübergangsstörung ist behoben. Der Regelbetrieb wird wieder aufgenommen. #S3 #hvv #sbahnhh
+
+[38;5;244m───────────────────[39m
+[38;5;244m Yesterday [39m
+[38;5;244m───────────────────[39m
+
+[38;5;231m[48;5;71m[19:09][49m[39m #S1, #S3 wieder durch den Citytunnel. Polizeieinsatz beendet. #S1 #S3 #hvv #sbahnhh
+[38;5;231m[48;5;71m[00:03][49m[39m Polizeieinsatz am Airport beendet. Der Regelbetrieb wird wieder aufgenommen. #S1 #hvv #sbahnhh
+[38;5;231m[48;5;241m[17:27][49m[39m Update 3: Weiterhin Weichenstörung in Ohlsdorf. Aktuell wieder Zugverkehr zwischen Ohlsdorf und Poppenbüttel, weite… https://t.co/k5XdnXCiXO"
+`;
+
+exports[`Tweets renders no "Today" divider and displays message when there are no tweets today 1`] = `
+"No tweets found today.
+
+[38;5;244m───────────────────[39m
+[38;5;244m Yesterday [39m
+[38;5;244m───────────────────[39m
+
+[38;5;231m[48;5;96m[07:35][49m[39m Die Bahnübergangsstörung ist behoben. Der Regelbetrieb wird wieder aufgenommen. #S3 #hvv #sbahnhh
+[38;5;231m[48;5;71m[19:09][49m[39m #S1, #S3 wieder durch den Citytunnel. Polizeieinsatz beendet. #S1 #S3 #hvv #sbahnhh
+[38;5;231m[48;5;71m[00:03][49m[39m Polizeieinsatz am Airport beendet. Der Regelbetrieb wird wieder aufgenommen. #S1 #hvv #sbahnhh
+[38;5;231m[48;5;241m[17:27][49m[39m Update 3: Weiterhin Weichenstörung in Ohlsdorf. Aktuell wieder Zugverkehr zwischen Ohlsdorf und Poppenbüttel, weite… https://t.co/k5XdnXCiXO"
+`;
+
+exports[`Tweets renders no "Yesterday" divider and does not display a message when there are no tweets yesterday 1`] = `
+"
+[38;5;244m─────────────────────[39m
+[38;5;244m Today [39m
+[38;5;244m─────────────────────[39m
+
+[38;5;231m[48;5;96m[07:35][49m[39m Die Bahnübergangsstörung ist behoben. Der Regelbetrieb wird wieder aufgenommen. #S3 #hvv #sbahnhh
+[38;5;231m[48;5;71m[19:09][49m[39m #S1, #S3 wieder durch den Citytunnel. Polizeieinsatz beendet. #S1 #S3 #hvv #sbahnhh
+[38;5;231m[48;5;71m[00:03][49m[39m Polizeieinsatz am Airport beendet. Der Regelbetrieb wird wieder aufgenommen. #S1 #hvv #sbahnhh
+[38;5;231m[48;5;241m[17:27][49m[39m Update 3: Weiterhin Weichenstörung in Ohlsdorf. Aktuell wieder Zugverkehr zwischen Ohlsdorf und Poppenbüttel, weite… https://t.co/k5XdnXCiXO"
+`;

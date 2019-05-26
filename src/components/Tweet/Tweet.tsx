@@ -10,13 +10,9 @@ import { Tweet as TweetType } from '../../types'
 export const Tweet = (props: TweetType) => {
   const { created_at: createdAt, text } = props
 
-  const [bgRgb, rgb] = coloursForTweet(props)
-
   return (
     <Box>
-      <Color bgRgb={bgRgb} rgb={rgb}>
-        {processDate(createdAt)}
-      </Color>
+      <Color {...coloursForTweet(props)}>{processDate(createdAt)}</Color>
       <Text>{processText(text)}</Text>
     </Box>
   )
