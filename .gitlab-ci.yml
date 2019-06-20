@@ -1,0 +1,35 @@
+image: node:10.10
+
+stages:
+  - configure
+  - test
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+before_script:
+  - yarn
+
+variables:
+  # https://github.com/chalk/chalk/issues/203
+  FORCE_COLOR: '1'
+
+init_config:
+  stage: configure
+  script:
+    - mv config.template.json config.json
+  artifacts:
+    paths:
+      - config.json
+
+run_linter:
+  stage: test
+  script:
+    - yarn lint
+
+run_tests:
+  stage: test
+  script:
+    - yarn test
