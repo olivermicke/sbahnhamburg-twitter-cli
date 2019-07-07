@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { render } from 'ink'
 
-import { View } from './components/View'
+import { App } from './components/App'
 
 import { parseOptionsFromCLI } from './parse-options'
 
-render(<View {...parseOptionsFromCLI()} />)
+render(<App {...parseOptionsFromCLI()} />)

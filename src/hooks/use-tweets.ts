@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
-import { getTweets } from '../../api'
+import { getTweets } from '../api'
 
-import { OptionsFromCLI, Tweet } from '../../types'
+import { OptionsFromCLI, Tweet } from '../types'
 
 export const useTweets = (optionsFromCLI: OptionsFromCLI): readonly Tweet[] | null => {
   const [tweets, setTweets] = useState(null as readonly Tweet[] | null)

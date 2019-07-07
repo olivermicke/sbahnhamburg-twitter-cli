@@ -5,13 +5,13 @@ import Spinner from 'ink-spinner'
 
 import { Tweets } from '../Tweets'
 
-import { useTweets } from '../hooks'
+import { Tweet } from '../../types'
 
-import { OptionsFromCLI, Tweet } from '../../types'
+interface Props {
+  tweets: readonly Tweet[] | null
+}
 
-export const View = (optionsFromCLI: OptionsFromCLI) => {
-  const tweets = useTweets(optionsFromCLI)
-
+export const View = ({ tweets }: Props) => {
   const hasTweets = tweets && tweets.length > 0
   const hasFetched = tweets !== null
 
